@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'plants/edit'
   get 'plants/update'
   get 'plants/destroy'
-  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
+  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations', omniauth_callbacks: 'omniauth'}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
