@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_042438) do
+ActiveRecord::Schema.define(version: 2021_06_15_212010) do
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "water_need"
+    t.string "sun_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +32,23 @@ ActiveRecord::Schema.define(version: 2021_06_13_042438) do
     t.string "username"
     t.string "name"
     t.string "location_code"
+    t.string "provider", limit: 50, default: "", null: false
+    t.string "uid", limit: 50, default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "water_logs", force: :cascade do |t|
+    t.date "water_date"
+    t.time "water_time"
+    t.integer "user_id", null: false
+    t.integer "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_water_logs_on_plant_id"
+    t.index ["user_id"], name: "index_water_logs_on_user_id"
+  end
+
+  add_foreign_key "water_logs", "plants"
+  add_foreign_key "water_logs", "users"
 end
