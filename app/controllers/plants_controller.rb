@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  before_action :find_plant, only: [:show, :edit, :update, :destroy]
   def index
     @plants = current_user.plants
   end
@@ -27,5 +28,11 @@ class PlantsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def find_plant
+    @plant = Plant.find(params[:id])
   end
 end
