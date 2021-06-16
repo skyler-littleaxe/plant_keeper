@@ -26,6 +26,11 @@ class PlantsController < ApplicationController
   end
 
   def update
+    if @plant.update(plant_params)
+      redirect_to plant_path, notice: "Plant updated successfully."
+    else
+      render :edit
+    end
   end
 
   def destroy
