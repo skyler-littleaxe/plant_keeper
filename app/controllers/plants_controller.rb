@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_plant, only: [:show, :edit, :update, :destroy]
   def index
     @plants = current_user.plants
@@ -31,6 +32,10 @@ class PlantsController < ApplicationController
   end
 
   private
+
+  def plant_params
+    params.require(:plant).permit(:name, :location, :water_need, :sun_type)
+  end
 
   def find_plant
     @plant = Plant.find(params[:id])
