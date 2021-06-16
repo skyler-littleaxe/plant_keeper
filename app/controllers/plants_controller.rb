@@ -10,13 +10,14 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     if @plant.save
-      redirect_to plants_path, notice: "Plant added to inventory."
+      redirect_to plants_index_path, notice: "Plant added to inventory."
     else
       render :new
     end
   end
 
   def show
+
   end
 
   def edit

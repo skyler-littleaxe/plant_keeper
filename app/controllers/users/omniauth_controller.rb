@@ -8,11 +8,11 @@ class OmniauthController < Devise::OmniauthCallbacksController
              flash[:error]='There was a problem signing you in through Github. Please register or try signing in later.'
              redirect_to new_user_registration_url
         end
-     end
+    end
  
-     def failure
+    def failure
          flash[:error] = 'There was a problem signing you in. Please register or try signing in later.'
          redirect_to new_user_registration_url
-     end
+    end
  end
  

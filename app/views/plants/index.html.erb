@@ -1,2 +1,10 @@
-<h1>Plants#index</h1>
-<p>Find me in app/views/plants/index.html.erb</p>
+<h3>Your Plants:</h3><br>
+
+<p>
+<% @plants.each do |plant| %>
+    <%= link_to "#{plant.name}", plant_path(plant) %>, Most recent water time @ (insert chain or scope metod for return of last date and time for water_log) <br>
+<% end %>
+
+
+
+
