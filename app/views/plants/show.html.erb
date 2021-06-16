@@ -1,2 +1,13 @@
-<h1>Your Plant: <%= @plant.name %> </h1>
+<h3>Your Plant: <%= @plant.name %> </h3>
+
+<p>
+Located in: <%= @plant.location %> <br>
+Water me: <%= @plant.water_need %> <br>
+Put me in a place thats: <%= @plant.sun_type %> <br>
+The last time I was watered was:<%= @plant.water_logs.last.water_date %> @  <%= @plant.water_logs.last.water_time %> <br>
+<br>
+<br>
+<%= link_to 'Add Water Time', new_waterlog_path %>
+
+</p>
 
