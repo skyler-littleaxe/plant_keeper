@@ -1,20 +1,3 @@
 <h3>Add a new plant:</h3>
-<%= form_with model: @plant do |f| %>
-    <% if @plant.errors.any? %>
-    <ul>
-    <% @plant.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  <% end %>
-    <%= f.label :name %> <br>
-    <%= f.text_field :name %> <br>
-    <%= f.label :location, "Location of plant:" %> <br>
-    <%= f.text_field :location %> <br>
-    <%= f.label :water_need, "Water me:" %> <br>
-    <%= f.select :water_need, ["Once, weekly", "Every other day", "Three times a week", "Daily", "Multiple times a day" ]  %> <br>
-    <%= f.label sun_type, "Put me in a place thats" %> <br>
-    <%= f.text_field :sun_type, ["Dark", "Low Light", "Medium Light", "Sunny", "Outside" ] %> <br>
-    <br>    
-    <%= f.submit 'Add Plant' %><br>
-<% end %>
+
+<%= render 'plants_form' %>
