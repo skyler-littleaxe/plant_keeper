@@ -31,5 +31,8 @@ class WaterLogsController < ApplicationController
   end
 
   def destroy
+    plant_name = @water_log.plant.name
+    @water_log.destroy
+    redirect_to plants_index_path, notice: "Water Log for #{plant_name} successfully deleted."
   end
 end

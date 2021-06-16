@@ -1,0 +1,16 @@
+<%= form_with model: @water_log do |f| %>
+    <% if @water_log.errors.any? %>
+        <ul>
+        <% @water_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+        </ul>
+    <% end %>
+    <%= f.label :water_date %> <br>
+    <%= f.text_field :water_date %> <br>
+    <%= f.label :water_time %> <br>
+    <%= f.text_field :water_time %> <br>
+    <br>    
+    <%= f.submit 'Add Log' %><br>
+<% end %>
+
