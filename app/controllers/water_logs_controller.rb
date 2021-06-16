@@ -8,13 +8,12 @@ class WaterLogsController < ApplicationController
   end
 
   def create
-    @water_logs = WaterLog.new(waterlog_params)
+    @water_log = WaterLog.new(waterlog_params)
     if @plant.save
       redirect_to plants_index_path, notice: "Water Log added to #{@water_logs.plant.name}."
     else
       render :new
     end
-
   end
 
   def show
@@ -24,6 +23,11 @@ class WaterLogsController < ApplicationController
   end
 
   def update
+    if @water_log = WaterLog.update(waterlog_params)
+      redirect_to plants_index_path, notice: "Water Log for #{@water_logs.plant.name} successfully updated."
+    else
+      render :edit
+    end
   end
 
   def destroy
