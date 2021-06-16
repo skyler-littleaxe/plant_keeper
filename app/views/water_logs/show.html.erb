@@ -1,2 +1,7 @@
-<h1>WaterLogs#show</h1>
-<p>Find me in app/views/water_logs/show.html.erb</p>
+<h3>Water Log:</h3>
+Plant: <%= @water_log.plant.name %>
+Date: <%= @water_log.water_date %> Time: <%= @water_log.water_time %> <br>
+
+<%= link_to 'Edit Water Log', edit_waterlog_path(@water_log) %>
+
+
