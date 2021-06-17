@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_212010) do
+ActiveRecord::Schema.define(version: 2021_06_17_183849) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
@@ -38,17 +38,17 @@ ActiveRecord::Schema.define(version: 2021_06_15_212010) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "water_logs", force: :cascade do |t|
+  create_table "waterings", force: :cascade do |t|
     t.date "water_date"
     t.time "water_time"
     t.integer "user_id", null: false
     t.integer "plant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["plant_id"], name: "index_water_logs_on_plant_id"
-    t.index ["user_id"], name: "index_water_logs_on_user_id"
+    t.index ["plant_id"], name: "index_waterings_on_plant_id"
+    t.index ["user_id"], name: "index_waterings_on_user_id"
   end
 
-  add_foreign_key "water_logs", "plants"
-  add_foreign_key "water_logs", "users"
+  add_foreign_key "waterings", "plants"
+  add_foreign_key "waterings", "users"
 end
