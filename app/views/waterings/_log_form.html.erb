@@ -1,5 +1,5 @@
 <%= form_with model: @watering do |f| %>
-    <% if @water_log.errors.any? %>
+    <% if @watering.errors.any? %>
         <ul>
         <% @watering.errors.full_messages.each do |message| %>
         <li><%= message %></li>

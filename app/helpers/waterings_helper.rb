@@ -1,2 +1,2 @@
-module WaterLogsHelper
+module WateringsHelper
 end
