@@ -1,7 +1,7 @@
-<%= form_with model: @water_log do |f| %>
+<%= form_with model: @watering do |f| %>
     <% if @water_log.errors.any? %>
         <ul>
-        <% @water_log.errors.full_messages.each do |message| %>
+        <% @watering.errors.full_messages.each do |message| %>
         <li><%= message %></li>
         <% end %>
         </ul>
