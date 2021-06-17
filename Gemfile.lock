@@ -84,6 +84,9 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    date_validator (0.11.0)
+      activemodel (>= 3)
+      activesupport (>= 3)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -270,6 +273,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (>= 3.26)
+  date_validator
   devise
   dotenv-rails
   jbuilder (~> 2.7)

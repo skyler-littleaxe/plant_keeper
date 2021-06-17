@@ -26,6 +26,7 @@ gem 'bootstrap-sass'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'dotenv-rails'
+gem 'date_validator'
 
 
 
