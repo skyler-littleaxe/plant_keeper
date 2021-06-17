@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :water_logs
-  has_many :plants, :through => :water_logs
+  has_many :waterings
+  has_many :plants, :through => :waterings
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
