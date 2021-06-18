@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root 'home#welcome', as: 'authenticated_root'
   end
   devise_scope :user do
-    root 'user/sessions#new'
+    root 'users/sessions#new'
   end
   resources :plants
   resources :waterings

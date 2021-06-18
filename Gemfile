@@ -24,7 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'omniauth-rails_csrf_protection'
-gem 'omniauth-github'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'date_validator'
 
