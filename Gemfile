@@ -27,6 +27,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'date_validator'
+gem 'bootstrap', '~> 5.0.1'
 
 
 
