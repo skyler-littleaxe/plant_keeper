@@ -41,4 +41,10 @@ class WateringsController < ApplicationController
   def watering_params
     params.require(:watering).permit(:water_date, :water_time, :user_id, :plant_id )
   end
+
+  def find_log
+    @watering = Watering.find(params[:id])
+  end
+
+
 end
