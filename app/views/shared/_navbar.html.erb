@@ -23,10 +23,9 @@
             <li class="nav-item">
             <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
             </li>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        <% end %>
-        </li>
+        <% end %>  
       </ul>
     </div>
   </div>
+  <%= render 'shared/search_form' %>
 </nav>
